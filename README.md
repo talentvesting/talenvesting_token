@@ -1,23 +1,22 @@
-# Tokens vesting contract
+# Token vesting contract
 
-### Install
+### Setup
 
 Clone this repository: <br>
-`git clone https://github.com/daomaker/tokens-vesting-contract.git`
+`git clone https://github.com/0xAchilles27/token-vesting-contract.git`
 
 Install dependencies: <br>
-`tokens-vesting-contract && npm install`
+`cd token-vesting-contract && npm install`
 
 ### Tests
 
-The project uses [HardHat](https://hardhat.org/), so all additional methods and plugins can bee found on their [documentation](https://hardhat.org/getting-started/).  <br><br>
-For UNIT tests run: <br>
+Run unit tests: <br>
 `npx hardhat test`
-
 
 ### Deploy
 
-Before running deployment you need to write out setup variables. Run `cp .env.prod .env` and write down all params of `.env` file. Then go to `./scripts/deploy.js` and write down **token**, **beneficiary**, **start**, **cliff**, **release period**, **releases count** variables.<br>
+Before running deployment you need to write out setup variables. Run `cp .env.example .env` and write down all params of `.env` file.
+Then go to `./scripts/deploy.js` and write down **token**, **beneficiary**, **start**, **cliff**, **release period**, **releases count** variables.<br>
 - `token`: Address of token, which beneficiary should receive
 - `beneficiary`: Address of beneficiary, who should receive vested tokens
 - `start`: Time when vesting start (_should be UNIX timestamp of the certain date_)
@@ -37,8 +36,3 @@ For Etherscan verification after deployment run this commands:<br>
 ### How it works
 
 After deploying the **Vesting contract**, it should receive tokens for future vesting logic. Owner can simply transfer required amount of tokens to the contract address. There are multiply releases with the same delay. When time will be reached release tokens will be available for claiming.
-
-### Methods for UI
-
-1) `vesting.release()`: Beneficiary receives releasable tokens
-2) `vesting.getAvailableTokens()`: Get tokens amount, which beneficiary can receive at that moment
