@@ -3,7 +3,7 @@
 ### Setup
 
 Clone this repository: <br>
-`git clone https://github.com/0xAchilles27/token-vesting-contract.git`
+`git clone https://github.com/talentvesting/talenvesting_token`
 
 Install dependencies: <br>
 `cd token-vesting-contract && npm install`
